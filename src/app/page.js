@@ -12,6 +12,35 @@ export default function Home() {
             <p className="text-2xl font-semibold text-black">Interners</p>
           </a>
 
+          <form className="grow max-w-screen-sm">
+            <div className="relative">
+              <div className="absolute inset-y-0 start-2 flex items-center ps-3 pointer-events-none">
+                <svg
+                  className="w-4 h-4 text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="block w-full pl-12 py-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Search Mockups, Logos..."
+                required
+              />
+            </div>
+          </form>
+
           <button
             data-collapse-toggle="navbar-default"
             type="button"
@@ -40,35 +69,6 @@ export default function Home() {
               />
             </svg>
           </button>
-
-          <form className="grow max-w-screen-sm">
-            <div className="relative">
-              <div className="absolute inset-y-0 start-2 flex items-center ps-3 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              <input
-                type="search"
-                id="default-search"
-                className="block w-full pl-12 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Search Mockups, Logos..."
-                required
-              />
-            </div>
-          </form>
 
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 place-items-center md:flex-row md:space-x-4 rtl:space-x-reverse">
@@ -125,8 +125,8 @@ export default function Home() {
         </div>
       </nav>
 
-      <aside className="fixed min-w-60 top-0 left-0 z-40 h-screen pt-24 bg-white border-r border-gray-200">
-        <div className="h-full px-3 pb-4 overflow-y-auto">
+      <aside className="fixed min-w-60 top-0 left-0 z-40 h-screen pt-24 bg-white border-r border-gray-200 hidden sm:block">
+        <div className="h-full flex flex-col justify-between px-3 pb-4 overflow-y-auto">
           <ol className="space-y-2 text-black text-xl font-medium">
             <li className="hover:text-blue-700">
               <a href="#">Home</a>
@@ -140,46 +140,27 @@ export default function Home() {
           </ol>
           <ol className="space-y-2 text-black text-xl font-medium">
             <li className="hover:text-blue-700">
-              <a href="#">Home</a>
+              <a href="#">About Us</a>
             </li>
             <li className="hover:text-blue-700">
-              <a href="#">Build Your CV</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Explore</a>
+              <a href="#">Contact</a>
             </li>
           </ol>
         </div>
       </aside>
 
-      <aside className="fixed top-0 right-0 z-40 h-screen pt-24 bg-white border-l border-gray-200">
+      <aside className="fixed top-0 right-0 z-40 h-screen pt-24 bg-white border-l border-gray-200 hidden lg:block">
         <div className="h-full px-3 pb-4 overflow-auto space-y-4">
           <p className="text-black font-medium text-xl">Your Bookmarks</p>
           <div className="grid grid-cols-1 space-y-4">
             <a href="#">
               <div className=" bg-white border border-gray-200 rounded-2xl">
-                <div className="p-5">
-                  <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
-                    Front-End Designer
-                  </h5>
-                  <img
-                    className="my-6"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png"
-                    alt="Google Logo"
-                    width={128}
-                    height={216}
-                  />
-                  <div className="mb-2">
+                <div className="p-3">
+                  <div>
                     <p className="text-xl font-semibold tracking-tight text-gray-700">
                       Google Corporation
                     </p>
-                    <p className="text-gray-700">Jakarta, Indonesia</p>
                   </div>
-                  <ol className="list-decimal list-inside text-gray-700">
-                    <li>Design font-end websites htmlFor Interners.</li>
-                    <li>Improve UI/UX</li>
-                    <li>Provide soultions to day-to-day problems</li>
-                  </ol>
                 </div>
               </div>
             </a>
@@ -187,26 +168,49 @@ export default function Home() {
         </div>
       </aside>
 
-      <div className="place-items-center ml-40 mr-80 px-4 space-y-4">
-        <div className="min-w-screen flex flex-row space-x-4 mt-4">
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full">
+      <div className="grow bg-white sm:ml-64 lg:mr-[15.5rem] space-y-4">
+        <div className="flex flex-row justify-center space-x-4 mt-4">
+          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Filter
           </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full">
+          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             For You
           </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full">
+          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Recently Added
           </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full">
+          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Internship
           </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full">
+          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Contract
           </a>
         </div>
-        <div className="min-w-screen bg-gray-200 rounded-2xl text-black">
-          <p>Job Title</p>
+        <div className="min-w-screen">
+          <div className="bg-gray-200 rounded-2xl text-black p-2.5">
+            <div className="flex place-items-center space-x-2">
+              <p className="text-2xl font-medium">Job Title</p>
+              <p>●</p>
+              <p className="text-2xl font-medium">Intern</p>
+            </div>
+            <p>Company Name</p>
+            <div className="flex flex-row space-x-4">
+              <p>Hourly Wages IDR 70K+</p>
+              <p>Cengkareng, West Jakarta</p>
+            </div>
+            <ol className="list-decimal list-inside mb-2">
+              <li>Prepare ingredients for planned dish.</li>
+              <li>Help out the task given by Head Chef.</li>
+              <li>Giving service to customers in need.</li>
+            </ol>
+            <div className="inline-block rounded-full bg-gray-700 text-white py-1 px-4">
+              <p>High School Diploma</p>
+            </div>
+          </div>
+          <div className="space-x-2 mt-4">
+            <a className="bg-blue-700 text-white px-4 py-2 rounded-full">Apply Now</a>
+            <a className="bg-blue-700 text-white px-4 py-2 rounded-full">Bookmarks</a>
+          </div>
         </div>
       </div>
     </div>
