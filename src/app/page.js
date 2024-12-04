@@ -124,13 +124,37 @@ export default function Home() {
             />
             <img
               src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg"
-              className="rounded-full bg-white w-32 h-32 object-cover absolute top-60 left-24"
+              className="rounded-full bg-white w-32 h-32 object-cover absolute top-60 left-12"
             />
           </div>
           <div className="mx-6">
             <p className="text-3xl font-bold text-black mb-2">Google Corp.</p>
-            <p className="text-base text-black">New York, America</p>
-            
+            <p className="text-base text-black mb-4">New York, America</p>
+            <textarea
+              id="message"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Company description..."
+            ></textarea>
+          </div>
+          <div className="bg-gray-400 h-[0.5px] min-w-screen my-6"></div>
+          <div className="mx-6 mb-6">
+            <div className="flex justify-between">
+              <p className="text-xl text-black font-semibold mb-2">
+                Job Listing
+              </p>
+              <a>
+                <p className="text-gray-400 hover:text-blue-700">See All</p>
+              </a>
+            </div>
+            <p className="text-base text-black mb-2">
+              There is no listing at the moment
+            </p>
+            <a>
+              <div className="rounded-xl border border-gray-400 border-dashed hover:border-solid w-48 h-32 place-items-center content-center">
+                <p className="text-3xl text-gray-400 font-semibold">+</p>
+              </div>
+            </a>
           </div>
         </div>
       </main>
