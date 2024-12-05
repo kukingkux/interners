@@ -1,29 +1,47 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen2(false);
+  };
+
+  const toggleDropdown2 = () => {
+    setIsDropdownOpen(false);
+    setIsDropdownOpen2(!isDropdownOpen2);
+  };
+
   return (
     <div className="min-w-screen min-h-screen bg-white flex flex-col">
       <nav className="bg-white border-b border-gray-200 sticky top-0">
         <div className="flex flex-wrap place-items-center justify-between p-4">
-          <a
-            href="https://flowbite.com/"
+          <Link
+            href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
               Interners
             </span>
-          </a>
+          </Link>
 
           <button
-            data-collapse-toggle="navbar-default"
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="navbar-default"
-            aria-expanded="false"
-            onClick={() => {
-              const menu = document.getElementById("navbar-default");
-              menu.classList.toggle("hidden");
-            }}
+            aria-expanded={isMenuOpen}
+            onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -43,23 +61,28 @@ export default function Home() {
             </svg>
           </button>
 
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+          <div
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } w-full md:block md:w-auto`}
+            id="navbar-default"
+          >
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 place-items-center md:flex-row md:space-x-4 rtl:space-x-reverse">
               <li>
-                <a
+                <Link
                   href="#"
                   className="font-medium text-black hover:text-blue-900"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="font-medium text-black hover:text-blue-900"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
                 <button className="border border-gray-400 rounded-full text-black hover:text-blue-900 hover:border-blue-900">
@@ -114,16 +137,21 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="flex flex-col min-w-screen">
-        <div className="grow">
+      <main className="flex flex-col min-w-screen h-full bg-white">
+        <div className="grow h-full bg-white">
           <div className="mb-24">
-            <img
+            <Image
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYXdO7mK7s8qsbgK13AaUbCo8Wo122wEzROw&s"
-              alt="Girl in a jacket"
+              alt="Company cover"
+              width={1920}
+              height={192}
               className="w-screen h-48 object-cover"
             />
-            <img
+            <Image
               src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg"
+              width={128}
+              height={128}
+              alt="Company logo"
               className="rounded-full bg-white w-32 h-32 object-cover absolute top-60 left-12"
             />
           </div>
@@ -143,9 +171,9 @@ export default function Home() {
               <p className="text-xl text-black font-semibold mb-2">
                 Job Listing
               </p>
-              <a>
-                <p className="text-gray-400 hover:text-blue-700">See All</p>
-              </a>
+              <Link href="#" className="text-gray-400 hover:text-blue-700">
+                See All
+              </Link>
             </div>
             <p className="text-base text-black mb-2">
               See your current active listing, and click on the add button to
@@ -155,20 +183,76 @@ export default function Home() {
               <div className="rounded-xl border border-gray-400 w-48 p-4 content-center place-content-center">
                 <div className="flex justify-between">
                   <p className="text-black font-bold">Front-End Developer</p>
-                  <a className="text-black">
+                  <button
+                    className="text-black"
+                    onClick={toggleDropdown2}
+                    data-dropdown-toggle="dropdown2"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="size-6"
+                      className="size-6"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
-                  </a>
+                  </button>
+                  <div
+                    id="dropdown2"
+                    className={`absolute left-4 mt-12 ${
+                      isDropdownOpen2 ? "block" : "hidden"
+                    } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 z-[100]`}
+                  >
+                    <ul
+                      className="py-2 text-sm text-gray-700"
+                      aria-labelledby="dropdownDefaultButton"
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Edit
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Share
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Preview
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Results
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100 text-red-800"
+                        >
+                          Delete
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <p className="text-black text-sm">New York, America</p>
                 <div className="my-2">
@@ -207,11 +291,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <a>
+              <Link href="#">
                 <div className="rounded-xl border border-gray-400 border-dashed hover:border-solid w-48 h-full place-items-center content-center">
                   <p className="text-3xl text-gray-400 font-semibold">+</p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="bg-gray-400 h-[0.5px] min-w-screen my-6"></div>
@@ -220,9 +304,9 @@ export default function Home() {
               <p className="text-xl text-black font-semibold mb-2">
                 Recent Applicant
               </p>
-              <a>
-                <p className="text-gray-400 hover:text-blue-700">See All</p>
-              </a>
+              <Link href="#" className="text-gray-400 hover:text-blue-700">
+                See All
+              </Link>
             </div>
             <p className="text-base text-black mb-2">
               Review your most recent applicants on your listings
@@ -231,20 +315,78 @@ export default function Home() {
               <div className="rounded-xl border border-gray-400 w-48 p-4 content-center place-content-center">
                 <div className="flex justify-between">
                   <p className="text-black font-bold">Front-End Developer</p>
-                  <a className="text-black">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-6"
+                  <div className="relative">
+                    <button
+                      className="text-black"
+                      onClick={toggleDropdown}
+                      data-dropdown-toggle="dropdown"
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </a>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      id="dropdown"
+                      className={`absolute right-0 mt-2 ${
+                        isDropdownOpen ? "block" : "hidden"
+                      } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 z-[100]`}
+                    >
+                      <ul
+                        className="py-2 text-sm text-gray-700"
+                        aria-labelledby="dropdownDefaultButton"
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                          >
+                            Edit
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                          >
+                            Share
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                          >
+                            Preview
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100"
+                          >
+                            Results
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block px-4 py-2 hover:bg-gray-100 text-red-800"
+                          >
+                            Delete
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <p className="text-black text-sm">New York, America</p>
                 <div className="my-2">
@@ -283,11 +425,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <a>
+              <Link href="#">
                 <div className="rounded-xl border border-gray-400 border-dashed hover:border-solid w-48 h-full place-items-center content-center">
                   <p className="text-3xl text-gray-400 font-semibold">+</p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
