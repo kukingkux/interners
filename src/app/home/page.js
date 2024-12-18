@@ -1,6 +1,6 @@
 "use client";
 
-export default function LandingPage() {
+export default function HomePage() {
   return (
     <div className="min-w-screen min-h-screen bg-white flex flex-col">
       <nav className="bg-white border-b border-gray-200 sticky top-0">
@@ -41,6 +41,47 @@ export default function LandingPage() {
             </svg>
           </button>
 
+          <form className="grow max-w-screen-sm">
+            <label
+              htmlFor="default-search"
+              className="mb-2 text-sm font-medium text-gray-900 sr-only"
+            >
+              Search
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg
+                  className="w-4 h-4 text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Search Mockups, Logos..."
+                required
+              />
+              <button
+                type="submit"
+                className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 place-items-center md:flex-row md:space-x-4 rtl:space-x-reverse">
               <li>
@@ -74,19 +115,42 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      <div className="grow grid place-content-center h-100 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-[96]">
-        <p className="font-semibold text-5xl text-center">Your First Step</p>
-        <p className="font-semibold text-5xl text-center">Break Away</p>
-      </div>
-
-      <div className="grow my-4">
-        <div className="mb-4 mx-6">
-          <p className="text-black font-medium text-xl">RECENT LISTINGS:</p>
+      <div className="grow mx-4 my-4 space-y-4">
+        <div className="w-100 flex flex-row place-content-center space-x-3">
+          <a
+            href="#"
+            className="bg-gray-500 px-4 py-2 rounded-full hover:bg-blue-700"
+          >
+            Location
+          </a>
+          <a
+            href="#"
+            className="bg-gray-500 px-4 py-2 rounded-full hover:bg-blue-700"
+          >
+            Wages
+          </a>
+          <a
+            href="#"
+            className="bg-gray-500 px-4 py-2 rounded-full hover:bg-blue-700"
+          >
+            Most Recents
+          </a>
+          <a
+            href="#"
+            className="bg-gray-500 px-4 py-2 rounded-full hover:bg-blue-700"
+          >
+            Bookmarks
+          </a>
+          <a href="#" className="bg-blue-700 px-4 py-2 rounded-full">
+            Search
+          </a>
         </div>
-
-        <div className="flex flex-row space-x-6 overflow-x-scroll whitespace-nowrap">
+        <p className="font-bold text-2xl text-black">
+          Based on your preference, we have...
+        </p>
+        <div className="grid grid-cols-4 grid-flow-row gap-4">
           <a href="#">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-2xl ml-6">
+            <div className="bg-white border border-gray-200 rounded-2xl">
               <div className="p-5">
                 <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
                   Front-End Designer
@@ -102,27 +166,18 @@ export default function LandingPage() {
                   <p className="text-xl font-semibold tracking-tight text-gray-700">
                     Google Corporation
                   </p>
-                  <p className="text-gray-700">
-                    Jakarta, Indonesia
-                  </p>
+                  <p className="text-gray-700">Jakarta, Indonesia</p>
                 </div>
                 <ol className="list-decimal list-inside text-gray-700">
-                    <li>
-                        Design font-end websites for Interners.
-                    </li>
-                    <li>
-                        Improve UI/UX
-                    </li>
-                    <li>
-                        Provide soultions to day-to-day problems
-                    </li>
+                  <li>Design font-end websites htmlFor Interners.</li>
+                  <li>Improve UI/UX</li>
+                  <li>Provide soultions to day-to-day problems</li>
                 </ol>
               </div>
             </div>
           </a>
-
           <a href="#">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-2xl">
+            <div className=" bg-white border border-gray-200 rounded-2xl">
               <div className="p-5">
                 <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
                   Front-End Designer
@@ -138,27 +193,18 @@ export default function LandingPage() {
                   <p className="text-xl font-semibold tracking-tight text-gray-700">
                     Google Corporation
                   </p>
-                  <p className="text-gray-700">
-                    Jakarta, Indonesia
-                  </p>
+                  <p className="text-gray-700">Jakarta, Indonesia</p>
                 </div>
                 <ol className="list-decimal list-inside text-gray-700">
-                    <li>
-                        Design font-end websites for Interners.
-                    </li>
-                    <li>
-                        Improve UI/UX
-                    </li>
-                    <li>
-                        Provide soultions to day-to-day problems
-                    </li>
+                  <li>Design font-end websites htmlFor Interners.</li>
+                  <li>Improve UI/UX</li>
+                  <li>Provide soultions to day-to-day problems</li>
                 </ol>
               </div>
             </div>
           </a>
-
           <a href="#">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-2xl">
+            <div className=" bg-white border border-gray-200 rounded-2xl">
               <div className="p-5">
                 <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
                   Front-End Designer
@@ -174,27 +220,18 @@ export default function LandingPage() {
                   <p className="text-xl font-semibold tracking-tight text-gray-700">
                     Google Corporation
                   </p>
-                  <p className="text-gray-700">
-                    Jakarta, Indonesia
-                  </p>
+                  <p className="text-gray-700">Jakarta, Indonesia</p>
                 </div>
                 <ol className="list-decimal list-inside text-gray-700">
-                    <li>
-                        Design font-end websites for Interners.
-                    </li>
-                    <li>
-                        Improve UI/UX
-                    </li>
-                    <li>
-                        Provide soultions to day-to-day problems
-                    </li>
+                  <li>Design font-end websites htmlFor Interners.</li>
+                  <li>Improve UI/UX</li>
+                  <li>Provide soultions to day-to-day problems</li>
                 </ol>
               </div>
             </div>
           </a>
-
           <a href="#">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-2xl">
+            <div className=" bg-white border border-gray-200 rounded-2xl">
               <div className="p-5">
                 <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
                   Front-End Designer
@@ -210,27 +247,18 @@ export default function LandingPage() {
                   <p className="text-xl font-semibold tracking-tight text-gray-700">
                     Google Corporation
                   </p>
-                  <p className="text-gray-700">
-                    Jakarta, Indonesia
-                  </p>
+                  <p className="text-gray-700">Jakarta, Indonesia</p>
                 </div>
                 <ol className="list-decimal list-inside text-gray-700">
-                    <li>
-                        Design font-end websites for Interners.
-                    </li>
-                    <li>
-                        Improve UI/UX
-                    </li>
-                    <li>
-                        Provide soultions to day-to-day problems
-                    </li>
+                  <li>Design font-end websites htmlFor Interners.</li>
+                  <li>Improve UI/UX</li>
+                  <li>Provide soultions to day-to-day problems</li>
                 </ol>
               </div>
             </div>
           </a>
-
           <a href="#">
-            <div className="max-w-sm bg-white border border-gray-200 rounded-2xl">
+            <div className=" bg-white border border-gray-200 rounded-2xl">
               <div className="p-5">
                 <h5 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
                   Front-End Designer
@@ -246,29 +274,18 @@ export default function LandingPage() {
                   <p className="text-xl font-semibold tracking-tight text-gray-700">
                     Google Corporation
                   </p>
-                  <p className="text-gray-700">
-                    Jakarta, Indonesia
-                  </p>
+                  <p className="text-gray-700">Jakarta, Indonesia</p>
                 </div>
                 <ol className="list-decimal list-inside text-gray-700">
-                    <li>
-                        Design font-end websites for Interners.
-                    </li>
-                    <li>
-                        Improve UI/UX
-                    </li>
-                    <li>
-                        Provide soultions to day-to-day problems
-                    </li>
+                  <li>Design font-end websites htmlFor Interners.</li>
+                  <li>Improve UI/UX</li>
+                  <li>Provide soultions to day-to-day problems</li>
                 </ol>
               </div>
             </div>
           </a>
         </div>
-
       </div>
     </div>
   );
 }
-
-
