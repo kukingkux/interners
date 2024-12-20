@@ -87,7 +87,7 @@ export default function TopNavigaton({btnBack, searchBar}) {
             </form>
 
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 place-items-center md:flex-row md:space-x-4 rtl:space-x-reverse">
+                <ul className="font-medium flex flex-col p-4 md:p-0 place-items-center md:flex-row md:space-x-4 rtl:space-x-reverse">
                 <li>
                     <Link
                     href="/contactus"
@@ -107,11 +107,6 @@ export default function TopNavigaton({btnBack, searchBar}) {
                 <li>
                     <button className="border border-blue-500 rounded-md text-blue-500 font-medium hover:text-blue-900 hover:border-blue-900 px-6 py-2">
                     Login
-                    </button>
-                </li>
-                <li>
-                    <button className="border bg-blue-500 rounded-md text-white font-medium hover:text-blue-900 hover:border-blue-900 px-6 py-2">
-                    Register
                     </button>
                 </li>
                 </ul>
