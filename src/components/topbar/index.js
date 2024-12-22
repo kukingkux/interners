@@ -1,11 +1,19 @@
 "use-client";
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import axiosInstance from '../../app/axios';
 
 export default function TopNavigaton({btnBack, searchBar}) {
     const router = useRouter()
+    let baseURL = axiosInstance.defaults.baseURL
+
+    const [isActive, setActive] = useState(false);
+    const toggleOnClick = () => {
+        setActive(!isActive)
+    }
     return(
     <nav className="bg-white border-b border-gray-200 sticky top-0">
         <div className="flex flex-wrap place-items-center justify-between p-4">
@@ -105,18 +113,22 @@ export default function TopNavigaton({btnBack, searchBar}) {
                     </Link>
                 </li>
                 <li className='group'>
-                    <button className="border border-blue-500 rounded-md text-blue-500 font-medium hover:text-blue-900 hover:border-blue-900 px-6 py-2">
+                    <button className="border border-blue-500 rounded-md text-blue-500 font-medium hover:text-blue-900 hover:border-blue-900 px-6 py-2"
+                    onClick={toggleOnClick}>
                     Sign in
                     </button>
                     <div className="text-black">
-                        <div class="fixed right-7 w-16 overflow-hidden inline-block z-10 transition transform translate-y-8 ease-in-out invisible group-hover:visible group-hover:translate-y-0">
-                            <div class="h-9 w-9 bg-white rotate-45 transform origin-bottom-left border-2 border-gray-200"></div>
+                        <div className={`fixed mt-1 right-7 w-16 overflow-hidden inline-block z-10 transition transform ease-in-out translate-y-${isActive ? '0 visible' : '8 invisible'}`}>
+                            <div className="h-9 w-9 bg-white rotate-45 transform origin-bottom-left border-2 border-gray-200"></div>
                         </div>
                         <div className=
-                            "fixed flex flex-col gap-2 w-96 right-2 top-24 p-5 rounded-lg bg-white shadow-lg border-2 border-gray-200 transition transform translate-y-8 ease-in-out invisible group-hover:visible group-hover:translate-y-0"
+                            {`fixed flex flex-col gap-2 w-96 right-2 top-24 p-5 rounded-lg bg-white shadow-lg border-2 border-gray-200 transition transform ease-in-out  translate-y-${isActive ? '0 visible' : '8 invisible'}`}
                         >
+                            <button onClick={toggleOnClick} className='fixed right-2 top-1'>
+                                <FontAwesomeIcon icon={faClose} className='text-gray-300 hover:text-gray-400' />
+                            </button>
                             <p className="">Pursue your dream, register on <span className="font-bold text-blue-700">Interners</span> now and make it happen!</p>
-                            <div className="flex items-center justify-center gap-2 rounded-lg bg-blue-700 hover:bg-blue-900 text-white p-2 cursor-pointer">
+                            <Link href={`${baseURL}/api/v1/auth/google/login`} className="flex items-center justify-center gap-2 rounded-lg bg-blue-700 hover:bg-blue-900 text-white p-2 cursor-pointer">
                                 <img
                                     className=""
                                     src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
@@ -125,7 +137,7 @@ export default function TopNavigaton({btnBack, searchBar}) {
                                     height={28}
                                 />
                                 Sign in with Google
-                            </div>
+                            </Link>
                             <p className="text-xs text-center text-gray-400">By creating an account you agree with our Terms of Service, Privacy Policy, and our default Notification Settings.</p>
                         </div>
                     </div>
