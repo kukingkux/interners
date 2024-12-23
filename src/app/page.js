@@ -1,5 +1,7 @@
 "use client";
 
+import React from 'react';
+
 export default function Home() {
   return (
     <div className="min-w-screen min-h-screen bg-white flex flex-col">
@@ -125,91 +127,92 @@ export default function Home() {
         </div>
       </nav>
 
-      <aside className="fixed min-w-60 top-0 left-0 z-40 h-screen pt-24 bg-white border-r border-gray-200 hidden sm:block">
-        <div className="h-full flex flex-col justify-between px-3 pb-4 overflow-y-auto">
-          <ol className="space-y-2 text-black text-xl font-medium">
-            <li className="hover:text-blue-700">
-              <a href="#">Home</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Build Your CV</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Explore</a>
-            </li>
-          </ol>
-          <ol className="space-y-2 text-black text-xl font-medium">
-            <li className="hover:text-blue-700">
-              <a href="#">About Us</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Contact</a>
-            </li>
-          </ol>
-        </div>
-      </aside>
-
-      <aside className="fixed top-0 right-0 z-40 h-screen pt-24 bg-white border-l border-gray-200 hidden lg:block">
-        <div className="h-full px-3 pb-4 overflow-auto space-y-4">
-          <p className="text-black font-medium text-xl">Your Bookmarks</p>
-          <div className="grid grid-cols-1 space-y-4">
-            <a href="#">
-              <div className=" bg-white border border-gray-200 rounded-2xl">
-                <div className="p-3">
-                  <div>
-                    <p className="text-xl font-semibold tracking-tight text-gray-700">
-                      Google Corporation
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
+      <div className="border-b border-gray-200">
+        <div className="flex p-4 gap-x-8">
+          <a className="text-black font-semibold flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+            Back
+          </a>
+          <div className="flex gap-x-2">
+            <a className="text-blue-700">Aston Hotel Palembang</a>
+            <p className="text-black">/</p>
+            <p className="text-black">Chef Assistant</p>
           </div>
         </div>
-      </aside>
+      </div>
 
-      <div className="grow bg-white sm:ml-64 lg:mr-[15.5rem] space-y-4">
-        <div className="flex flex-row justify-center space-x-4 mt-4">
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
-            Filter
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
-            For You
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
-            Recently Added
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
-            Internship
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
-            Contract
-          </a>
-        </div>
-        <div className="min-w-screen">
-          <div className="bg-gray-200 rounded-2xl text-black p-2.5">
-            <div className="flex place-items-center space-x-2">
-              <p className="text-2xl font-medium">Job Title</p>
-              <p>●</p>
-              <p className="text-2xl font-medium">Intern</p>
+      <div className="m-4">
+        <div className="bg-gray-300 p-4 flex justify-between">
+          <div>
+            <div className="mb-4">
+              <p className="text-xl text-black font-semibold">CHEF ASSISTANT</p>
+              <p className="text-black">Palembang, Indonesia</p>
             </div>
-            <p>Company Name</p>
-            <div className="flex flex-row space-x-4">
-              <p>Hourly Wages IDR 70K+</p>
-              <p>Cengkareng, West Jakarta</p>
-            </div>
-            <ol className="list-decimal list-inside mb-2">
-              <li>Prepare ingredients for planned dish.</li>
-              <li>Help out the task given by Head Chef.</li>
-              <li>Giving service to customers in need.</li>
-            </ol>
-            <div className="inline-block rounded-full bg-gray-700 text-white py-1 px-4">
-              <p>High School Diploma</p>
+            <p className="text-gray-400">Last Updated at 30/09</p>
+          </div>
+          <div>
+            <div className="flex gap-x-4">
+              <a className="bg-blue-700 hover:bg-blue-800 grow-0 rounded-md py-2 px-4 text-white h-auto">
+                Bookmark
+              </a>
+              <a className="bg-blue-700 hover:bg-blue-800 grow-0 rounded-md py-2 px-4 text-white h-auto">
+                Apply Now
+              </a>
             </div>
           </div>
-          <div className="space-x-2 mt-4">
-            <a className="bg-blue-700 text-white px-4 py-2 rounded-full">Apply Now</a>
-            <a className="bg-blue-700 text-white px-4 py-2 rounded-full">Bookmarks</a>
+        </div>
+      </div>
+
+      <div className="grow flex row gap-x-4 mx-4">
+        <div className="grow">
+          <div className="bg-gray-300 p-4 grid gap-y-8">
+            <div>
+              <p className="text-black">Job Description</p>
+              <ol className="list-decimal text-black pl-4">
+                <li>Prepare ingredients for planned dish</li>
+                <li>Help out the task given by Head Chef</li>
+                <li>Giving service to customers in need</li>
+              </ol>
+            </div>
+            <div>
+              <p className="text-black">Qualifications</p>
+              <ol className="list-decimal text-black pl-4">
+                <li>High School Graduate</li>
+                <li>Minimum age of 17 years old</li>
+                <li>Medically fit</li>
+              </ol>
+            </div>
+            <div>
+              <p className="text-black">
+                Wage: Rp. 70,000 ~ 85,000 per hour (Experience based)
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="shrink">
+          <div className="bg-gray-300">
+            <div className="bg-gray-700 place-content-center text-center p-12">
+              <p>Company Banner</p>
+            </div>
+            <div className="grid p-4 gap-y-2">
+              <p className="text-black text-xl font-semibold">
+                PT. Aston Hotel Palembang
+              </p>
+              <p className="text-black">Company Description</p>
+            </div>
           </div>
         </div>
       </div>
