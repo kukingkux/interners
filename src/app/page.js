@@ -3,162 +3,128 @@
 export default function Home() {
   return (
     <div className="min-w-screen min-h-screen bg-white flex flex-col">
-      <nav className="bg-white border-b border-gray-200 sticky top-0">
-        <div className="flex flex-wrap place-items-center justify-between p-4">
-          <a
-            href="https://flowbite.com/"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
-              Interners
-            </span>
-          </a>
-
-          <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-            onClick={() => {
-              const menu = document.getElementById("navbar-default");
-              menu.classList.toggle("hidden");
-            }}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 place-items-center md:flex-row md:space-x-4 rtl:space-x-reverse">
-              <li>
-                <a
-                  href="#"
-                  className="font-medium text-black hover:text-blue-900"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-medium text-black hover:text-blue-900"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <button className="border border-gray-400 rounded-full text-black hover:text-blue-900 hover:border-blue-900">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6 m-1"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-              </li>
-              <li>
-                <button className="border border-gray-400 rounded-full text-black hover:text-blue-900 hover:border-blue-900">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6 m-1"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-              </li>
-              <li>
-                <button className="border border-gray-400 rounded-full text-black hover:text-blue-900 hover:border-blue-900">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="size-6 m-1"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 0 1-.517.608 7.45 7.45 0 0 0-.478.198.798.798 0 0 1-.796-.064l-.453-.324a1.875 1.875 0 0 0-2.416.2l-.243.243a1.875 1.875 0 0 0-.2 2.416l.324.453a.798.798 0 0 1 .064.796 7.448 7.448 0 0 0-.198.478.798.798 0 0 1-.608.517l-.55.092a1.875 1.875 0 0 0-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 0 1-.064.796l-.324.453a1.875 1.875 0 0 0 .2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 0 1 .796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 0 1 .517-.608 7.52 7.52 0 0 0 .478-.198.798.798 0 0 1 .796.064l.453.324a1.875 1.875 0 0 0 2.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 0 1-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 0 0 1.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 0 1-.608-.517 7.507 7.507 0 0 0-.198-.478.798.798 0 0 1 .064-.796l.324-.453a1.875 1.875 0 0 0-.2-2.416l-.243-.243a1.875 1.875 0 0 0-2.416-.2l-.453.324a.798.798 0 0 1-.796.064 7.462 7.462 0 0 0-.478-.198.798.798 0 0 1-.517-.608l-.091-.55a1.875 1.875 0 0 0-1.85-1.566h-.344ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </div>
+      <aside className="fixed min-w-60 top-0 left-0 z-40 h-screen pt-4 bg-white border-r border-gray-200 hidden sm:block">
+        <div className="m-4 space-y-4">
+          <p className="text-2xl font-semibold text-black">SETTINGS</p>
+          <ol className="space-y-2 text-black text-md font-medium">
+            <li className="hover:text-blue-700">
+              <a href="#">EDIT PROFILE</a>
+            </li>
+            <li className="hover:text-blue-700">
+              <a href="#">SECURITY</a>
+            </li>
+            <li className="hover:text-blue-700">
+              <a href="#">NOTIFICATIONS</a>
+            </li>
+            <li className="hover:text-blue-700">
+              <a href="#">APPEARANCE</a>
+            </li>
+            <li className="hover:text-blue-700">
+              <a href="#">HELP</a>
+            </li>
+          </ol>
         </div>
-      </nav>
+      </aside>
 
-      <main className="justify-items-center p-4">
+      <main className="pl-64 p-4">
         <p className="text-black font-bold text-2xl mb-6 text-left">
-          Create Listing
+          EDIT PROFILE
         </p>
+
         <form className="grow">
-          <div className="mb-6">
-            <label
-              htmlFor="jobtitle"
-              className="block mb-2 text-sm font-medium text-gray-900"
-            >
-              Job title
+          <div className="place-self-center place-items-center justify-center mb-6">
+            <div className="bg-gray-700 rounded-full px-14 py-12">P</div>
+            <label>
+              <input type="file" className="hidden" />
+              <a className="text-gray-700">Change Avatar</a>
             </label>
-            <input
-              type="text"
-              id="jobtitle"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="John Doe Company"
-              required
-            />
+          </div>
+
+          <div className="flex justify-between space-x-4 mb-6">
+            <div className="grow">
+              <label
+                htmlFor="firstname"
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
+                First Name
+              </label>
+              <input
+                type="text"
+                id="firstname"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+            <div className="grow">
+              <label
+                htmlFor="lastname"
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastname"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="Enter your last name"
+                required
+              />
+            </div>
           </div>
           <div className="mb-6">
             <label
-              htmlFor="location"
+              htmlFor="email"
               className="block mb-2 text-sm font-medium text-gray-900"
             >
-              Location
+              Email
             </label>
             <input
               type="text"
-              id="location"
+              id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="john.doe@company.com"
               required
             />
           </div>
+
+          <div className="mb-6">
+            <label
+              htmlFor="phone"
+              className="block mb-2 text-sm font-medium text-gray-900"
+            >
+              Phone number
+            </label>
+            <div className="flex item-center">
+              <select
+                id="countries"
+                className="bg-gray-50 border-l border-t border-b border-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
+              >
+                <option>+62</option>
+                <option>Canada</option>
+                <option>France</option>
+                <option>Germany</option>
+              </select>
+              <input
+                type="text"
+                id="phone"
+                className="grow bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-r-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="Insert your phone number"
+                required
+              />
+            </div>
+          </div>
+
           <div className="mb-2 flex  space-x-3">
             <div className="grow">
               <label
-                htmlFor="countries"
+                htmlFor="birthday"
                 className="block mb-2 text-sm font-medium text-gray-900"
               >
-                Province
+                Birthday
               </label>
               <select
-                id="countries"
+                id="birthday"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               >
                 <option>Not Selected</option>
@@ -168,6 +134,43 @@ export default function Home() {
                 <option>Germany</option>
               </select>
             </div>
+            <div className="grow">
+              <label
+                htmlFor="gender"
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
+                Gender
+              </label>
+              <select
+                id="gender"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              >
+                <option>Not Selected</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>France</option>
+                <option>Germany</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <label
+              htmlFor="address"
+              className="block mb-2 text-sm font-medium text-gray-900"
+            >
+              Address
+            </label>
+            <input
+              type="text"
+              id="address"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Insert your address"
+              required
+            />
+          </div>
+
+          <div className="flex justify-between space-x-4 mb-6">
             <div className="grow">
               <label
                 htmlFor="city"
@@ -175,44 +178,9 @@ export default function Home() {
               >
                 City
               </label>
+
               <select
                 id="city"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              >
-                <option>Not Selected</option>
-                <option>United States</option>
-                <option>Canada</option>
-                <option>France</option>
-                <option>Germany</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="flex items-center mb-6">
-            <input
-              id="checked-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-            />
-            <label
-              for="checked-checkbox"
-              class="ms-2 text-sm font-medium text-gray-900"
-            >
-              Use company address
-            </label>
-          </div>
-
-          <div className="mb-6">
-            <label
-              htmlFor="jobtype"
-              className="block mb-2 text-sm font-medium text-gray-900"
-            >
-              Job type
-            </label>
-            <div className="flex space-x-3">
-              <select
-                id="jobtype"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               >
                 <option>Select One</option>
@@ -221,65 +189,63 @@ export default function Home() {
                 <option>Contract</option>
                 <option>Full-Time</option>
               </select>
-              <select
-                id="jobtype"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            </div>
+            <div className="grow">
+              <label
+                htmlFor="zip"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
-                <option>Select One</option>
-                <option>Work from office / WFO</option>
-                <option>Work from home / WFH</option>
-                <option>Hybrid</option>
-              </select>
+                Zip Code
+              </label>
+              <input
+                type="text"
+                id="zip"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="Enter your address zip code"
+                required
+              />
             </div>
           </div>
 
           <div className="mb-6">
             <label
-              htmlFor="wages"
+              htmlFor="dropzone-file"
               className="block mb-2 text-sm font-medium text-gray-900"
             >
-              Wages
+              Upload CV
             </label>
-            <div className="flex space-x-3">
-              <p className="text-xl text-black place-self-center">RP.</p>
-              <input
-                type="text"
-                id="wages"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="Insert Wages"
-                required
-              />
-              <p className="text-gray-300 place-self-center">─</p>
-              <input
-                type="text"
-                id="wages"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="Insert Wages"
-                required
-              />
-              <select
-                id="wages"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            <div className="flex items-center justify-center w-full">
+              <label
+                htmlFor="dropzone-file"
+                className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50"
               >
-                <option>Hourly Rate</option>
-                <option>Monthly Rate</option>
-              </select>
+                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                  <svg
+                    className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 16"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                    />
+                  </svg>
+                  <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Click to upload</span> or
+                    drag and drop
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    SVG, PNG, JPG or GIF (MAX. 800x400px)
+                  </p>
+                </div>
+                <input id="dropzone-file" type="file" className="hidden" />
+              </label>
             </div>
-          </div>
-
-          <div className="mb-6">
-            <label
-              htmlFor="company-details"
-              className="block mb-2 text-sm font-medium text-gray-900"
-            >
-              Job description
-            </label>
-            <textarea
-              id="company-details"
-              rows="4"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Leave a comment..."
-            ></textarea>
           </div>
 
           <div className="grid justify-items-end">
@@ -287,7 +253,7 @@ export default function Home() {
               type="submit"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
-              Create
+              Save Changes
             </button>
           </div>
         </form>
