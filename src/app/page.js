@@ -4,14 +4,12 @@ import TopNavigaton from "@/components/topbar";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-
 export default function LandingPage() {
   const router = useRouter();
 
   useEffect(() => {
 		const userData = document.cookie;
 		if (userData) {
-      console.log(userData)
 			router.push("/home");
 		}
 	});

@@ -1,5 +1,5 @@
 "use-client";
-import { faChevronLeft, faClose } from '@fortawesome/free-solid-svg-icons';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -146,11 +146,31 @@ export default function TopNavigaton({btnBack, searchBar}) {
             </div>
                 
         </div>
-        <div className={`p-4 border-t-2 border-black text-xl text-black ${btnBack}`}>
-            <Link href="/home" className="flex items-center max-w-fit gap-2 w-auto cursor-pointer">
-                <FontAwesomeIcon icon={faChevronLeft} />
-                <p>Back</p>
+        <div className={`border-b border-gray-200 ${btnBack}`}>
+            <div className="flex p-4 gap-x-8">
+            <Link href="#" className="text-black font-semibold flex">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
+                >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+                </svg>
+                Back
             </Link>
+            <div className="flex gap-x-2">
+                <Link href="#" className="text-blue-700">Aston Hotel Palembang</Link>
+                <p className="text-black">/</p>
+                <p className="text-black">Chef Assistant</p>
+            </div>
+            </div>
         </div>
     </nav>
     )
