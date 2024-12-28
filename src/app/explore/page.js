@@ -1,16 +1,21 @@
 "use client";
 
+import CardPostExplore from "@/components/post-card-explore";
+import SideNavigationLeft from "@/components/sidebar-left";
+import SideNavigationRight from "@/components/sidebar-right";
+import Link from "next/link";
+
 export default function ExplorePage() {
   return (
     <div className="min-w-screen min-h-screen bg-white flex flex-col">
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="flex flex-wrap place-items-center justify-between p-4">
-          <a
+          <Link
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <p className="text-2xl font-semibold text-black">Interners</p>
-          </a>
+          </Link>
 
           <form className="grow max-w-screen-sm">
             <div className="relative">
@@ -35,7 +40,7 @@ export default function ExplorePage() {
                 type="search"
                 id="default-search"
                 className="block w-full pl-12 py-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Search Mockups, Logos..."
+                placeholder="Search Intern Jobs.."
                 required
               />
             </div>
@@ -125,93 +130,28 @@ export default function ExplorePage() {
         </div>
       </nav>
 
-      <aside className="fixed min-w-60 top-0 left-0 z-40 h-screen pt-24 bg-white border-r border-gray-200 hidden sm:block">
-        <div className="h-full flex flex-col justify-between px-3 pb-4 overflow-y-auto">
-          <ol className="space-y-2 text-black text-xl font-medium">
-            <li className="hover:text-blue-700">
-              <a href="#">Home</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Build Your CV</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Explore</a>
-            </li>
-          </ol>
-          <ol className="space-y-2 text-black text-xl font-medium">
-            <li className="hover:text-blue-700">
-              <a href="#">About Us</a>
-            </li>
-            <li className="hover:text-blue-700">
-              <a href="#">Contact</a>
-            </li>
-          </ol>
-        </div>
-      </aside>
-
-      <aside className="fixed top-0 right-0 z-40 h-screen pt-24 bg-white border-l border-gray-200 hidden lg:block">
-        <div className="h-full px-3 pb-4 overflow-auto space-y-4">
-          <p className="text-black font-medium text-xl">Your Bookmarks</p>
-          <div className="grid grid-cols-1 space-y-4">
-            <a href="#">
-              <div className=" bg-white border border-gray-200 rounded-2xl">
-                <div className="p-3">
-                  <div>
-                    <p className="text-xl font-semibold tracking-tight text-gray-700">
-                      Google Corporation
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </aside>
+      <SideNavigationLeft />
+      <SideNavigationRight />
 
       <div className="grow bg-white sm:ml-64 lg:mr-[15.5rem] space-y-4">
         <div className="flex flex-row justify-center space-x-4 mt-4">
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+          <Link href={""} className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Filter
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+          </Link>
+          <Link href={""} className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             For You
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+          </Link>
+          <Link href={``} className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Recently Added
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+          </Link>
+          <Link href={``} className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Internship
-          </a>
-          <a className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+          </Link>
+          <Link href={``} className="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700">
             Contract
-          </a>
+          </Link>
         </div>
-        <div className="min-w-screen">
-          <div className="bg-gray-200 rounded-2xl text-black p-2.5">
-            <div className="flex place-items-center space-x-2">
-              <p className="text-2xl font-medium">Job Title</p>
-              <p>●</p>
-              <p className="text-2xl font-medium">Intern</p>
-            </div>
-            <p>Company Name</p>
-            <div className="flex flex-row space-x-4">
-              <p>Hourly Wages IDR 70K+</p>
-              <p>Cengkareng, West Jakarta</p>
-            </div>
-            <ol className="list-decimal list-inside mb-2">
-              <li>Prepare ingredients for planned dish.</li>
-              <li>Help out the task given by Head Chef.</li>
-              <li>Giving service to customers in need.</li>
-            </ol>
-            <div className="inline-block rounded-full bg-gray-700 text-white py-1 px-4">
-              <p>High School Diploma</p>
-            </div>
-          </div>
-          <div className="space-x-2 mt-4">
-            <a className="bg-blue-700 text-white px-4 py-2 rounded-full">Apply Now</a>
-            <a className="bg-blue-700 text-white px-4 py-2 rounded-full">Bookmarks</a>
-          </div>
-        </div>
+        <CardPostExplore />
       </div>
     </div>
   );
